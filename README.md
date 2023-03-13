@@ -1,7 +1,18 @@
 # 💻 리액트 디자인 시스템 NPM 배포 보일러 플레이트
-- UI Kits, Design System 구축해서 NPM으로 오픈소스 배포에 최적화 (TypeScript + Storybook 지원)
+**최근 업데이트 2023.03.13**
+- UI Kits, Design System 구축을 위한 NPM으로 오픈소스 배포에 최적화 보일러 플레이트
 - 웹팩 개발 서버, 불 필요한 웹팩, 로더 모두 제거 후 경량화
-- 모든 컴포넌트 UI 테스트는 웹팩 개발 서버를 띄우지 않고 스토리북 자체 개발 서버를 이용 (하단 내용 참고)
+- 모든 컴포넌트 UI 테스트는 웹팩 개발 서버를 띄우지 않고, `스토리북 자체 개발 서버`를 이용 (하단 내용 참고)
+
+<br />
+
+## 📗 구성
+- React v18
+- Babel을 이용한 트랜스파일링
+- Rollup을 이용한 번들링
+- TypeScript
+- styled-components
+- Storybook 지원
 
 <br />
 
@@ -11,16 +22,18 @@
 <br />
 
 ### 의존성 설치
+- 해당 레포는 `yarn 패키지 매니저`로 구성했기 때문에 특정 이슈가 없다면 yarn을 이용해 의존성 설치를 권장 함
 ```
 yarn
-또는
+or
+yarn install
 ```
 
 <br />
 
 ### package.json 수정
 - 해당 보일러 플레이트를 clone해서 사용한다면 package.json 수정이 필요함
-- name, version, description, repo/url, author ... 등 수정 필요
+- `name`, `version`, `description`, `repository/url`, `author` ... 등 수정 필요
 ```json
 {
   "name": "react-npm-deploy-boilerplate",
@@ -38,7 +51,7 @@ yarn
   "bugs": {
     "url": "https://github.com/ssi02014/react-npm-deploy-boilerplate.git/issues"
   },
-  "homepage": "https://github.com/ssi02014/react-npm-deploy-boilerplate.git/blob/master/README.md",
+  "homepage": "https://github.com/ssi02014/react-dev-env-boilarplate",
   // ...
 }
 
@@ -47,9 +60,9 @@ yarn
 <br />
 
 ### development
-- src폴더에서 컴포넌트 작업 후 `src/index.tsx`에서 export
+- `src/components`에서 컴포넌트 작업 후 `src/index.tsx`에서 export
 
-```js
+```jsx
 // src/components/Button/Button.tsx
 import React from 'react';
 import styled from 'styled-components';
@@ -63,7 +76,7 @@ const Button = ({ children, size = 'medium' }: Props) => {
   return <StyledButton size={size}>{children}</StyledButton>;
 };
 
-// styled 코드
+// ...styled
 
 export default Button
 ```
@@ -92,7 +105,7 @@ npm publish
 
 <br />
 
-### 배포된 컴포넌트 활용
+### 배포 된 컴포넌트 활용
 ```
 yarn add (본인 배포 저장소)
 ```

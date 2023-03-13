@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "target": "es5",
     "lib": [
       "dom",
@@ -22,7 +22,6 @@
     "outDir": "./dist",
     "declaration": true,
     "emitDeclarationOnly": true,
-    "declarationDir": "dist",
   },
   "include": [
     "src"
