@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/ssi02014/react-npm-deploy-boilerplate.git/issues"
   },
-  "homepage": "http://ssi02014.github.io/react-npm-deploy-boilerplate",
+  "homepage": "https://github.com/ssi02014/react-npm-deploy-boilerplate",
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.21.0",
