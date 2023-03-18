@@ -169,12 +169,12 @@ Default.args = {
 <br />
 
 ### storybook github page 배포
-- build:storybook으로 빌드 후에 deploy:storybook으로 github page로 배포
+- `build:storybook`으로 빌드 후에 `deploy:storybook`으로 github page로 배포
 ```
 yarn build:storybook
 ```
 ```
-deploy:storybook
+yarn deploy:storybook
 ```
 
 ### rollup alias(절대 경로) 추가하는 방법
