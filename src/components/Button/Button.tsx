@@ -13,6 +13,7 @@ const Button = ({ children, size = 'medium' }: Props) => {
 const StyledButton = styled.button<{ size: 'medium' | 'large' }>`
   background-color: #fa9696;
   border: none;
+  cursor: pointer;
   ${({ size }) => {
     if (size === 'medium') {
       return `padding: 10px 15px`;

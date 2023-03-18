@@ -1,5 +1,5 @@
 # 💻 리액트 디자인 시스템 NPM 배포 보일러 플레이트
-**최근 업데이트 2023.03.13**
+**최근 업데이트 2023.03.19**
 - UI Kits, Design System 구축을 위한 NPM으로 오픈소스 배포에 최적화 보일러 플레이트
 - 웹팩 개발 서버, 불 필요한 웹팩, 로더 모두 제거 후 경량화
 - 모든 컴포넌트 UI 테스트는 웹팩 개발 서버를 띄우지 않고, `스토리북 자체 개발 서버`를 이용 (하단 내용 참고)
@@ -33,7 +33,7 @@ yarn install
 
 ### package.json 수정
 - 해당 보일러 플레이트를 clone해서 사용한다면 package.json 수정이 필요함
-- `name`, `version`, `description`, `repository/url`, `author` ... 등 수정 필요
+- `name`, `version`, `description`, `repository/url`, `author`, `homepage` ... 등 수정 필요
 ```json
 {
   "name": "react-npm-deploy-boilerplate",
@@ -75,11 +75,8 @@ interface Props {
 const Button = ({ children, size = 'medium' }: Props) => {
   return <StyledButton size={size}>{children}</StyledButton>;
 };
-
-// ...styled
-
-export default Button
 ```
+
 ```js
 // src/index.tsx
 export { default as Button } from './components/Button/Button';
@@ -97,7 +94,7 @@ yarn build
 <br />
 
 ### deploy
-- 주의 1. deploy하기 전에 package.json version 업데이트 해줘야 함
+- 주의 1. deploy하기 전에 package.json `version` 업데이트 해줘야 함
 - 주의 2. deploy하기 전에 꼭 build 진행해야 됌 dist 폴더가 npm에 올라감
 ```
 npm publish
@@ -167,8 +164,29 @@ export const Default = Template.bind({});
 Default.args = {
   size: 'medium',
 };
-
 ```
 
 <br />
 
+### storybook github page 배포
+- build:storybook으로 빌드 후에 deploy:storybook으로 github page로 배포
+```
+yarn build:storybook
+```
+```
+deploy:storybook
+```
+
+### rollup alias(절대 경로) 추가하는 방법
+```json
+// tsconfig.paths.json
+{
+  "compilerOptions": {
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@shared/*": ["src/shared/*"],
+      // 여기다 추가
+    },
+  }
+}
+```

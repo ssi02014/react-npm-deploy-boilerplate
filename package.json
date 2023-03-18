@@ -1,6 +1,6 @@
 {
   "name": "react-npm-deploy-boilerplate",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "react-npm-deploy-boilerplate",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && rollup -c",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "build:storybook": "build-storybook",
+    "deploy:storybook": "gh-pages -d storybook-static"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.0",
+    "@rollup/plugin-alias": "^4.0.3",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
@@ -69,6 +70,10 @@
     "styled-components": "^5.3.8",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "eslintConfig": {
     "overrides": [

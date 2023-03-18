@@ -5,6 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import pkg from './package.json' assert { type: 'json' };
+import alias from '@rollup/plugin-alias';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
@@ -17,7 +18,7 @@ export default {
       sourcemap: false,
     },
   ],
-  external: ['react'],
+  external: ['react', 'react-dom'],
   plugins: [
     peerDepsExternal(),
     commonjs({ include: 'node_modules/**' }),
@@ -28,6 +29,9 @@ export default {
       exclude: /node_modules/,
       extensions,
       include: ['src/**/*'],
+    }),
+    alias({
+      entries: [{ find: '@', replacement: './src' }],
     }),
     typescript({ tsconfig: './tsconfig.json' }),
     terser(),
