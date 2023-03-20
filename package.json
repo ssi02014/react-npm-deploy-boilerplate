@@ -1,6 +1,6 @@
 {
   "name": "react-npm-deploy-boilerplate",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "react-npm-deploy-boilerplate",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/ssi02014/react-npm-deploy-boilerplate.git"
   },
   "author": "Gromit",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ssi02014/react-npm-deploy-boilerplate.git/issues"
   },
@@ -24,7 +24,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.0",
@@ -44,12 +44,12 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
-    "@types/node": "^18.15.1",
+    "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
     "babel-loader": "^9.1.2",
     "babel-preset-minify": "^0.5.2",
     "clean-webpack-plugin": "^4.0.0",
@@ -61,30 +61,18 @@
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-webpack-plugin": "^4.0.0",
     "gh-pages": "^5.0.0",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "rollup": "^3.19.1",
+    "rollup": "^3.20.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "styled-components": "^5.3.8",
+    "styled-components": "^5.3.9",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
-  },
-  "eslintConfig": {
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
   }
 }
