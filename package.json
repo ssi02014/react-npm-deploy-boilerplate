@@ -23,7 +23,6 @@
   "homepage": "https://github.com/ssi02014/react-npm-deploy-boilerplate",
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
@@ -51,7 +50,6 @@
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "babel-loader": "^9.1.2",
-    "babel-preset-minify": "^0.5.2",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.29.1",
     "eslint": "^8.36.0",
