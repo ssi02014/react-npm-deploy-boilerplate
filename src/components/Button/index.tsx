@@ -11,7 +11,7 @@ const Button = ({ children, size = 'medium' }: Props) => {
 };
 
 const StyledButton = styled.button<{ size: 'small' | 'medium' | 'large' }>`
-  background-color: #fa9696;
+  background-color: green;
   border: none;
   cursor: pointer;
 
