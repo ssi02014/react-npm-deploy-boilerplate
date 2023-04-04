@@ -7,36 +7,35 @@ jobs:
   npm-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: actions checkout
+      - name: Checkout 🔔
         uses: actions/checkout@v3
-      - name: node Setup
+      - name: Node Setup 🔔
         uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
-          scope: '@octocat'
-      - name: Install & Build & Deploy
+      - name: Install & Build 🔨
         run: | 
           yarn
           yarn build
-          yarn publish
+      - name: Publish 🚀
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   storybook-publish:
-    needs: npm-publish
     runs-on: ubuntu-latest
     steps:
-      - name: actions checkout
+      - name: Checkout 🔔
         uses: actions/checkout@v3
-      - name: Install & Build 
+      - name: Install & Build 🔨
         run: |
           yarn
           yarn build:storybook
-      - name: Deploy
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
           BRANCH: gh-pages
           FOLDER: storybook-static
+          TARGET_FOLDER: storybook-static
           CLEAN: true
-          TARGET_FOLDER: stories

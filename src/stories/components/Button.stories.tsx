@@ -10,14 +10,14 @@ export default {
       control: { type: 'check' },
     },
     size: {
-      options: ['medium', 'large'],
+      options: ['medium', 'large', 'small'],
       control: { type: 'select' },
     },
   },
 };
 
 interface Props {
-  size: 'medium' | 'large';
+  size: 'medium' | 'large' | 'small';
   select: any[];
 }
 
@@ -31,6 +31,7 @@ const Template: Story<Props> = ({ size }: Props) => {
 
 export const Default = Template.bind({});
 export const LARGE = Template.bind({});
+export const SMALL = Template.bind({});
 
 Default.args = {
   size: 'medium',
@@ -38,4 +39,8 @@ Default.args = {
 
 LARGE.args = {
   size: 'large',
+};
+
+SMALL.args = {
+  size: 'small',
 };
