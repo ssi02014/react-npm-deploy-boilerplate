@@ -7,28 +7,31 @@ jobs:
   npm-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: actions checkout & node Setup
+      - name: actions checkout
         uses: actions/checkout@v3
+      - name: node Setup
         uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
-          # Defaults to the user or organization that owns the workflow file
           scope: '@octocat'
       - name: Install & Build & Deploy
-        run: yarn
-        run: yarn build
-        run: yarn publish
+        run: | 
+          yarn
+          yarn build
+          arn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   storybook-publish:
     needs: npm-publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: actions checkout
+        uses: actions/checkout@v3
       - name: Install & Build 
-        run: yarn
-        run: yarn build:storybook
+        run: |
+          yarn
+          yarn build:storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
