@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { StoryFn } from '@storybook/react';
 import Button from '@components/Button';
 
 export default {
@@ -21,7 +21,7 @@ interface Props {
   select: any[];
 }
 
-const Template: Story<Props> = ({ size }: Props) => {
+const Template: StoryFn<Props> = ({ size }: Props) => {
   return (
     <div>
       <Button size={size}>안녕</Button>
@@ -29,18 +29,26 @@ const Template: Story<Props> = ({ size }: Props) => {
   );
 };
 
-export const Default = Template.bind({});
-export const LARGE = Template.bind({});
-export const SMALL = Template.bind({});
+export const Default = {
+  render: Template,
 
-Default.args = {
-  size: 'medium',
+  args: {
+    size: 'medium',
+  },
 };
 
-LARGE.args = {
-  size: 'large',
+export const LARGE = {
+  render: Template,
+
+  args: {
+    size: 'large',
+  },
 };
 
-SMALL.args = {
-  size: 'small',
+export const SMALL = {
+  render: Template,
+
+  args: {
+    size: 'small',
+  },
 };
