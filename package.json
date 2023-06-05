@@ -1,6 +1,6 @@
 {
   "name": "react-npm-deploy-boilerplate",
-  "version": "1.2.3",
+  "version": "1.3.2",
   "description": "react-npm-deploy-boilerplate",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -67,7 +67,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "styled-components": "^5.3.9",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.1.3"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
