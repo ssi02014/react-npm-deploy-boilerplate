@@ -7,6 +7,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import pkg from './package.json' assert { type: 'json' };
 import alias from '@rollup/plugin-alias';
 import image from '@rollup/plugin-image';
+import svgr from '@svgr/rollup';
 import path from 'path';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -25,6 +26,7 @@ export default {
   ],
   external: ['react', 'react-dom'],
   plugins: [
+    svgr(),
     image(),
     peerDepsExternal(),
     nodeResolve({

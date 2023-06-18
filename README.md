@@ -92,6 +92,30 @@ export { default as Button } from '@components/Button';
 
 <br />
 
+### 이미지 사용
+```jsx
+import image from '../../assets/sheep.jpg';
+import testUrl, { ReactComponent as TestSVG } from '../../assets/test.svg';
+
+const Component = ({ children, size = 'medium' }: Props) => {
+  return (
+    <>
+      {/* image test */}
+      <img width={300} src={image}></img>
+
+      {/* svg component test */}
+      <TestSVG />
+
+      {/* svg url test */}
+      <img src={testUrl} alt="" />
+    </>
+  );
+};
+
+```
+
+<br />
+
 ## 빌드와 배포
 - 컴포넌트 작업 후 아래 명령어를 통해 배포를 위한 build 진행
 ```
