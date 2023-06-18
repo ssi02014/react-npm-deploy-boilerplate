@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import image from '../../assets/test.jpg';
-import testUrl, { ReactComponent as TestSVG } from '../../assets/test.svg';
 
 interface Props {
   children: React.ReactNode;
@@ -12,14 +10,6 @@ const Button = ({ children, size = 'medium' }: Props) => {
   return (
     <>
       <StyledButton size={size}>{children}</StyledButton>
-      {/* image test */}
-      <img width={300} src={image}></img>
-
-      {/* svg component test */}
-      <TestSVG />
-
-      {/* svg url test */}
-      <img src={testUrl} alt="" />
     </>
   );
 };
