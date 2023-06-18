@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 interface Props {
   children: React.ReactNode;
@@ -12,6 +12,7 @@ const Button = ({ children, size = 'medium' }: Props) => {
 
 const StyledButton = styled.button<{ size: 'small' | 'medium' | 'large' }>`
   background-color: green;
+  color: #fff;
   border: none;
   cursor: pointer;
 

@@ -11,7 +11,7 @@
 - Babel을 이용한 트랜스파일링
 - Rollup을 이용한 번들링
 - TypeScript v5
-- styled-components
+- @emotion
 - Storybook v7
 
 <br />
@@ -67,7 +67,7 @@ yarn install
 ```jsx
 // src/components/Button/Button.tsx
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 interface Props {
   children: React.ReactNode;
