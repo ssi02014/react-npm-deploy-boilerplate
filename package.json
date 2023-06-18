@@ -1,6 +1,6 @@
 {
   "name": "react-npm-deploy-boilerplate",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "react-npm-deploy-boilerplate",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -32,6 +32,7 @@
     "@rollup/plugin-alias": "^5.0.0",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-image": "^3.0.2",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.1",

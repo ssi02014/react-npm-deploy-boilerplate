@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import image from '../../assets/sheep.jpg';
 
 interface Props {
   children: React.ReactNode;
@@ -7,7 +8,13 @@ interface Props {
 }
 
 const Button = ({ children, size = 'medium' }: Props) => {
-  return <StyledButton size={size}>{children}</StyledButton>;
+  return (
+    <>
+      <StyledButton size={size}>{children}</StyledButton>
+      {/* image test */}
+      <img width={300} src={image}></img>
+    </>
+  );
 };
 
 const StyledButton = styled.button<{ size: 'small' | 'medium' | 'large' }>`
