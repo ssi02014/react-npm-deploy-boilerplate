@@ -1,9 +1,9 @@
 {
   "name": "react-npm-deploy-boilerplate",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "react-npm-deploy-boilerplate",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && rollup -c",
@@ -26,7 +26,7 @@
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-react": "^7.22.3",
     "@babel/preset-typescript": "^7.21.5",
-    "@emotion/babel-plugin": "^11.11.0",
+    "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@rollup/plugin-alias": "^5.0.0",

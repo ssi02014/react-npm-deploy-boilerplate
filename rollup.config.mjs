@@ -16,12 +16,17 @@ const __dirname = path.resolve();
 process.env.BABEL_ENV = 'production';
 
 export default {
-  input: './src/index.tsx', // 진입 경로
+  input: './src/index.ts', // 진입 경로
   output: [
     {
       file: pkg.main,
-      format: 'esm',
       sourcemap: false,
+      format: 'cjs',
+    },
+    {
+      file: pkg.module,
+      sourcemap: false,
+      format: 'esm',
     },
   ],
   external: ['react', 'react-dom'],
@@ -41,7 +46,10 @@ export default {
       extensions,
       include: ['src/**/*'],
     }),
-    typescript({ tsconfig: './tsconfig.json' }),
+    typescript({
+      tsconfig: './tsconfig.json',
+      exclude: ['**/*.stories.tsx', '**/jest.setup.ts'],
+    }),
     terser(),
   ],
 };
